@@ -9,7 +9,7 @@ import java.io.*;
 import java.net.*;
 
 /**
- *
+ * Clase que permite una conexion con un socketServer para generar una comunicacion cliente servidior.
  * @author Eduard Jimenez
  */
 

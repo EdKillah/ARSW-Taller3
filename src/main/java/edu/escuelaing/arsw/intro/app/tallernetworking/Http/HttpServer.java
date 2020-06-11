@@ -1,20 +1,12 @@
-
 package edu.escuelaing.arsw.intro.app.tallernetworking.Http;
 
 /**
  *
  * @author Eduard Jimenez.
  */
-import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
 import java.awt.image.BufferedImage;
 import java.net.*;
 import java.io.*;
-import java.nio.ByteBuffer;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Arrays;
 import javax.imageio.ImageIO;
 
 public class HttpServer {
@@ -64,59 +56,58 @@ public class HttpServer {
                         res.substring(5, res.length() - 9),
                         new File("C:\\Users\\Z470\\Documents\\NetBeansProjects\\TallerNetworking\\src\\main"));
                 if (archivoEncontrado != null) {
+
                     BufferedReader reader = new BufferedReader(new FileReader(archivoEncontrado));
                     StringBuilder cadena = new StringBuilder();
                     String line = null;
                     while ((line = reader.readLine()) != null) {
                         cadena.append(line);
                     }
-
-                    Path archivo = Paths.get(archivoEncontrado.toString());
-                    BufferedReader lector = Files.newBufferedReader(archivo, Charset.forName("UTF-8"));
-                    BufferedImage image = ImageIO.read(new File("C:\\Users\\Z470\\Documents\\NetBeansProjects\\TallerNetworking\\src\\main\\resources\\img\\lluvia.jpg"));
-
-                    ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-                    ImageIO.write(image, "PNG", byteArrayOutputStream);
                     
-                    byteArrayOutputStream.flush();
+                    BufferedImage image = ImageIO.read(new File("C:\\Users\\Z470\\Documents\\NetBeansProjects\\TallerNetworking\\src\\main\\resources\\img\\suzaku.png"));
                     
-                    String base64String=Base64.encode(byteArrayOutputStream.toByteArray());
-                    byteArrayOutputStream.close();
+                    out.println("HTTP/1.1 200 OK");
                     
-                    byte[] bytearray = Base64.decode(base64String);
- 
-                    BufferedImage imag=ImageIO.read(new ByteArrayInputStream(bytearray));
+                    if(res.substring(res.length() - 12,  res.length() - 9).toUpperCase().equals("PNG")){
+                        out.println("Content-Type: image/png");
+                        out.println(); 
+                        ImageIO.write(image, "PNG", clientSocket.getOutputStream());
+                        
+                    }else{
+                        out.println("Content-Type: text/html");
+                        out.println(); 
+                        out.println(cadena);
+                    }
 
-                    imag.getGraphics().drawImage(image, 0, 0, null);
                     
-                    outputLine = "HTTP/1.1 200 OK\r\n"
-                            + "Content-Type: image/png\r\n"
-                            + "\r\n"
-                            + cadena;
-
 
                 } else {
-                    out.write(-1);
-                    outputLine = "HTTP/1.1 200 OK\r\n"
-                            + "Content-Type: text/html\r\n"
-                            + "\r\n"
-                            + "<!DOCTYPE html>"
-                            + "<html>"
-                            + "<head>"
-                            + "<meta charset=\"UTF-8\">"
-                            + "<title>Title of the document</title>\n"
-                            + "</head>"
-                            + "<body>"
-                            + "<h1>ERROR 404.<p><div style='color:red'>" + res.substring(5, res.length() - 9).toUpperCase() + "</div>" + " NO ENCONTRADO</p></h1>"
-                            + "</body>"
-                            + "</html>";
+                    outputLine = error(outputLine,res);
+                    out.println(outputLine);
                 }
             }
 
-            out.println(outputLine);
             out.close();
             in.close();
         }
 
+    }
+
+    private static String error(String outputLine, String res) {
+       
+        outputLine = "HTTP/1.1 200 OK\r\n"
+                + "Content-Type: text/html\r\n"
+                + "\r\n"
+                + "<!DOCTYPE html>"
+                + "<html>"
+                + "<head>"
+                + "<meta charset=\"UTF-8\">"
+                + "<title>Title of the document</title>\n"
+                + "</head>"
+                + "<body>"
+                + "<h1>ERROR 404.<p><div style='color:red'>" + res.substring(5, res.length() - 9).toUpperCase() + "</div>" + " NO ENCONTRADO</p></h1>"
+                + "</body>"
+                + "</html>";
+        return outputLine;
     }
 }

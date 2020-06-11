@@ -1,5 +1,6 @@
 
 
+
 # Introducción a redes, clientes y servicios con Java
 
 El siguiente repositorio contiene varios ejercicios en los cuales se vera una introducción a temas relacionados con manejo de URL's, Sockets por parte de un servidor y un cliente.
@@ -84,7 +85,7 @@ public class EchoClient {
 }
 
 ```
-
+![](resources/ej1.PNG)
 
 
 ### EJERCICIO 2
@@ -129,6 +130,8 @@ public class BrowserPrototype {
 }
 
 ```
+
+![](resources/ej2.PNG)
 
 ### EJERCICIO 4.3.1
 
@@ -262,7 +265,9 @@ public class EchoClient {
 
 ```
 
+![](resources/ej3.PNG)
 
+![](resources/ej4.PNG)
 
 ### EJERCICIO 4.3.2
 
@@ -276,8 +281,17 @@ java -cp target/miprimera-app-1.0-SNAPSHOT.jar edu.escuelaing.arsw.intro.app.tal
 ```
 #### Comando para ejecutar EchoClient:
 ```
-java -cp target/miprimera-app-1.0-SNAPSHOT.jar edu.escuelaing.arsw.intro.app.tallernetworking.EchoClient
+java -cp target/miprimera-app-1.0-SNAPSHOT.jar edu.escuelaing.arsw.intro.app.tallernetworking.EchoClient fun:value number
 ```
+**value:  contiene los siguientes valores validos**
+
+ - fun:sin
+ - fun:cos
+- fun:tang
+
+El valor por defecto es fun:cos por lo que se puede omitir su llamado y colocar directamente el ***number***
+
+**number: un número cualquiera al que se le quiere aplicar la función indicada**
 
 #### Código del programa FunctionSocket:
 
@@ -426,7 +440,7 @@ public class EchoClient {
 ```
 
 
-
+![](resources/ej5.PNG)
 
 
 
@@ -598,8 +612,22 @@ public class BuscarArchivo
         } 
 }
 ```
+#### Acceso a imagen
+
+![](resources/suzaku.PNG)
+
+#### Acceso a html
+
+![](resources/inicio.PNG
+
+#### Acceso a imagen
+
+![](resources/js.PNG
 
 
+#### Página de error sencilla
+
+![](resources/error.PNG
 
 ### Prerequisitos
 

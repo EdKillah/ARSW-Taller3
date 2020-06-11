@@ -9,16 +9,15 @@ import java.io.*;
 import java.net.*;
 
 /**
- *
+ * Clase que me permite acceder a una pagina web y me guarda la informacion en un archivo html
  * @author Eduard Jimenez
  */
 public class BrowserPrototype {
 
     public static void main(String[] args) throws Exception {
         String urlUser = args[0];
-        //URL google = new URL("http://www.google.com/");
         URL url = new URL(urlUser);
-        FileWriter archivo = new FileWriter("C:/Users/Z470/Documents/resultado.html");
+        FileWriter archivo = new FileWriter("resultado.html");
         try (BufferedReader reader
                 = new BufferedReader(new InputStreamReader(url.openStream()))) {
             String inputLine = null;
