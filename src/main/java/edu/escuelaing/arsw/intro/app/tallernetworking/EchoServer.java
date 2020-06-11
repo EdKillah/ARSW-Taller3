@@ -16,10 +16,10 @@ public class EchoServer {
 
     public static void main(String[] args) throws IOException {
         ServerSocket serverSocket = null;
-        System.out.println("Creando el servidor");
+        
         try {
             serverSocket = new ServerSocket(32000);
-            System.out.println("Servidor creado");
+           
         } catch (IOException e) {
             System.err.println("Could not listen on port: 32000.");
             System.exit(1);
@@ -59,7 +59,4 @@ public class EchoServer {
         serverSocket.close();
     }
     
-//    private static Double isNumber(String number){
-//        return Double.parseDouble(number);
-//    }
 }

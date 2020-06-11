@@ -9,7 +9,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
- *
+ * Clase que muestra informacion detallada de los metodos ofrecidos por la clas URL.
  * @author Eduard Jimenez
  */
 public class URLManager {
