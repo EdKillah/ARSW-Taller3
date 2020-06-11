@@ -264,10 +264,11 @@ public class EchoClient {
 }
 
 ```
+#### Pagina descargada y almacenada en el archivo resultado.html
 
 ![](resources/ej3.PNG)
 
-![](resources/ej4.PNG)
+
 
 ### EJERCICIO 4.3.2
 
@@ -438,7 +439,10 @@ public class EchoClient {
 }
 
 ```
+#### Ejecución del servidor
+![](resources/ej4.PNG)
 
+#### Ejecución del cliente
 
 ![](resources/ej5.PNG)
 
@@ -618,16 +622,16 @@ public class BuscarArchivo
 
 #### Acceso a html
 
-![](resources/inicio.PNG
+![](resources/inicio.PNG)
 
 #### Acceso a imagen
 
-![](resources/js.PNG
+![](resources/js.PNG)
 
 
 #### Página de error sencilla
 
-![](resources/error.PNG
+![](resources/error.PNG)
 
 ### Prerequisitos
 
@@ -641,7 +645,7 @@ Apache Maven version: 3.6.3
 
 ## Diagrama de clases
 
-![](resources/diagrama.PNG)
+![](resources/diagramas.PNG)
 
 
 
@@ -668,7 +672,7 @@ A continuación se presenta una imagen detallando el éxito de las mismas:
 
 ## Authors
 
-* **Eduard Jimenez** - *LOCS/Hora  360/12 = 30 LOCS/Hora* - Fecha: 10/06/2020
+* **Eduard Jimenez** - *LOCS/Hora  660/15 = 44 LOCS/Hora* - Fecha: 10/06/2020
 
 
 
