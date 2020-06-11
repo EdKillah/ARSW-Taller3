@@ -1,6 +1,7 @@
 
 
 
+
 # Introducción a redes, clientes y servicios con Java
 
 El siguiente repositorio contiene varios ejercicios en los cuales se vera una introducción a temas relacionados con manejo de URL's, Sockets por parte de un servidor y un cliente.
@@ -645,19 +646,9 @@ Apache Maven version: 3.6.3
 
 ## Diagrama de clases
 
+La siguiente imagen muestra los diagramas de clases contenidos en sus respectivos paquetes en los cuales se encuentran las clases de ClienteSocket (EchoClient) y el ServerSocket (FunctionSocket | EchoServer). Además se incluyen las clases de URLManager que utiliza las propiedades de una clase URL en java y BrowserPrototype la cual guarda una página web y la almacena en un archivo html.
+
 ![](resources/diagramas.PNG)
-
-
-
-
-## Pruebas del programa
-
-Al ejecutar el comando mvn package  se compila el programa y ejecuta las pruebas al mismo tiempo.
-Estas pruebas pruebas la funcionalidad correcta del programa, validando que cargué correctamente los archivos y que el conteo de lineas sea el correcto con un archivo base.
-
-A continuación se presenta una imagen detallando el éxito de las mismas:
-
-![](resources/pruebas.PNG)
 
 
 
